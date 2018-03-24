@@ -1,0 +1,32 @@
+﻿@model IEnumerable<WardrobeAppMVC.Models.Outfit>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>My Outfits</h2>
+
+<p class="create">
+    <button>@Html.ActionLink("Create New", "Create")</button>
+</p>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h2>@Html.DisplayFor(modelItem => item.Description)</h2>
+                    <img src="@Html.DisplayFor(modelItem => item.WardrobeItem3.Photo)" />
+                    <img src="@Html.DisplayFor(modelItem => item.WardrobeItem1.Photo)" />
+                    <img src="@Html.DisplayFor(modelItem => item.WardrobeItem2.Photo)" />
+                    <img src="@Html.DisplayFor(modelItem => item.WardrobeItem.Photo)" />
+                    <p></p>
+                    <button>@Html.ActionLink("Edit", "Edit", new { id = item.OutfitID })</button>
+                    <button>@Html.ActionLink("Details", "Details", new { id = item.OutfitID })</button>
+                    <button>@Html.ActionLink("Delete", "Delete", new { id = item.OutfitID })</button>
+                </div>
+            </div>
+        </div>
+    }
+</div>

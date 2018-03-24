@@ -1,0 +1,40 @@
+﻿@model WardrobeAppMVC.Models.WardrobeItem
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<h4>WardrobeItem</h4>
+<table class="tablel table-striped">
+    <tr>
+        <td>@Html.DisplayNameFor(model => model.Description)</td>
+        <td>@Html.DisplayFor(model => model.Description)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(model => model.Color)</td>
+        <td>@Html.DisplayFor(model => model.Color)</td>
+    </tr>
+    <tr>
+        <td>Type</td>
+        <td> @Html.DisplayFor(model => model.WardrobeType.Description)</td>
+    </tr>
+    <tr>
+        <td>Season</td>
+        <td>@Html.DisplayFor(model => model.Season.Description)</td>
+    </tr>
+    <tr>
+        <td>Occasion</td>
+        <td>@Html.DisplayFor(model => model.Occasion.Description)</td>
+    </tr>
+    <tr></tr>
+    <tr></tr>
+    <tr>
+        <td>Photo</td>
+        <td><img src="@Html.DisplayFor(model => model.Photo)" /></td>
+    </tr>
+</table>
+<p>
+    <button>@Html.ActionLink("Edit", "Edit", new { id = Model.ItemID })</button>
+    <button>@Html.ActionLink("Back to List", "Index")</button>
+</p>

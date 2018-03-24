@@ -1,0 +1,72 @@
+﻿@model WardrobeAppMVC.Models.Outfit
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Outfit</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Description)*@
+            Outfit Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.WardrobeItem3.Description)*@
+            Top
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WardrobeItem3.Description)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.WardrobeItem1.Description)*@
+            Bottom
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WardrobeItem1.Description)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.WardrobeItem2.Description)*@
+            Shoes
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WardrobeItem2.Description)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.WardrobeItem.Description)*@
+            Accessory
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WardrobeItem.Description)
+        </dd>
+
+    </dl>
+</div>
+
+<table>
+    <tr>
+        <td><img src="@Html.DisplayFor(model => model.WardrobeItem3.Photo)" /></td>
+        <td><img src="@Html.DisplayFor(model => model.WardrobeItem1.Photo)" /></td>
+        <td><img src="@Html.DisplayFor(model => model.WardrobeItem2.Photo)" /></td>
+        <td><img src="@Html.DisplayFor(model => model.WardrobeItem.Photo)" /></td>
+    </tr>
+</table>
+<p>
+    <button>@Html.ActionLink("Edit", "Edit", new { id = Model.OutfitID })</button> 
+    <button>@Html.ActionLink("Back to List", "Index")</button>
+</p>
